@@ -1,0 +1,25 @@
+<!-- </div> -->
+<div class="container">
+  <img class="img-fluid" src="/assets/images/img6.jpg" alt="Los Angeles" width="1100" height="500">
+</div>
+<hr class="w-25 my-4 mx-atuo">
+<div class="container my-2 ml-auto w-100 ">
+  <input class="form-control" type="text" [(ngModel)]="title" (input)="Search()" placeholder="Search by Country Name">
+</div>
+
+<br>
+<div class="container text-center mx-auto row mb-5">
+  <div class="col-lg-4 col-md-4 col-12 container" *ngFor="let post of posts">
+    <div class="card mt-3" style="width:300px">
+      <img class="card-img-top" [src]="post?.imagePath" alt="post?.title">
+      <div class="card-body">
+        <h4 class="card-title">{{ post?.title }}</h4>
+        <p class="card-text">Country Code : {{ post?.pages }}</p>
+        <a [routerLink]="['/details', post?._id]" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center mx-auto row" *ngIf="posts.length <= 0 ">
+  <p class="text-center">No Results Found!! </p> </div>

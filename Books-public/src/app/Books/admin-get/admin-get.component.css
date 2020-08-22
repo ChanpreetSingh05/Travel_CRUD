@@ -1,0 +1,12 @@
+img {
+width: 80px;
+display:block;
+}
+
+input{
+  float: right;
+  width: 25%;
+  height: 50px;
+  text-align: end;
+  padding: 7px;
+}
